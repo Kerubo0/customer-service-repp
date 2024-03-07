@@ -293,6 +293,9 @@ nav {
     display: flex ;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    top: 15px;
+    left: 500px;
     /*margin-right: 75px;*/
   }
   
