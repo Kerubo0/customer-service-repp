@@ -1,14 +1,4 @@
-/*const checkbox = document.getElementById("checkbox");
 
-checkbox.checked = true;
-
-if (checkbox.checked) {
-  document.body.classList.add("dark");
-}
-
-checkbox.addEventListener("change", () => {
-  document.body.classList.toggle("dark");
-});*/
 
 function showSidebar() {
     const sidebar = document.querySelector('.sidebar')
@@ -34,3 +24,21 @@ backToTopBtn.addEventListener("click", () => {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 });
+
+const btn = document.getElementById("btn");
+
+btn.addEventListener("click", ()=> {
+ window.location.href = "http://localhost:3000/join"
+})
+
+const btnTwo = document.getElementById("btn-2");
+
+btnTwo.addEventListener("click", ()=> {
+ window.location.href = "http://localhost:3000/join"
+})
+
+const btnThree = document.getElementById("btn-3");
+
+btnThree.addEventListener("click", ()=> {
+ window.location.href = "http://localhost:3000/join"
+})

@@ -13,7 +13,7 @@ body{
     background-color: #212121;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 18px;
     width: 100vw;
     overflow-x: hidden;
 }
@@ -243,17 +243,17 @@ nav {
     margin: 20px auto;
     max-width: 1000px;
     font-family: 'Montserrat', sans-serif;
-    font-size: 26px;
+    font-size: 19px;
     font-weight: 500;
   }
 
   h1, h2, h3, h4, h5, h6{
-    font-size: 34px;
+    font-size: 23px;
     font-weight: 600;
   }
 
   p{
-    font-size: 26px;
+    font-size: 18px;
     font-weight: 500;
   }
 
@@ -265,7 +265,7 @@ nav {
     margin: 20px;
     border-radius: 12px;
     font-weight: bold;
-    font-size: 26px;
+    font-size: 20px;
     border: none;
   }
 
@@ -322,8 +322,8 @@ max-width: 40%;
   position: relative;
  /* width: 500px;
   height: 500px;*/
-  bottom: 100px;
-  right: 150px;
+  bottom: 50px;
+  right: 50px;
 }
 
 
@@ -344,10 +344,11 @@ max-width: 40%;
 
 /*  FOURTH IMAGE */
 
-/*.self-improoves{
+.self-improoves{
   position: relative;
   top: 10px;
-  left: 50px;
+  left: 10px;
+  width: 320px;
 }
 
 .icon2{
@@ -360,6 +361,17 @@ max-width: 40%;
 .kelly{
   text-align: center;
   margin-top: 140px;
+ 
+}
+
+.kellys{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+  padding-top: 10px;
+ 
 }
 
 .card-container {
@@ -409,6 +421,7 @@ max-width: 40%;
     justify-content: space-between;
     align-items: center;
     padding-bottom: 20px;
+    
 }
   
 .final-btns {
@@ -416,14 +429,15 @@ width: 100%;
 }
 
 @media (max-width: 768px){
-  .final-btns{
+ /* .final-btns{
     display: block;
-  }
+  }*/
 
 }
   
 .rounded-btn-holder {
     margin-left: auto; 
+  
 }
 
 .secondary.rounded {
