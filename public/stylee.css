@@ -121,6 +121,30 @@ header{
   scale: 0.95;
 }
 
+/* DROPDOWN */
+
+.dropdown{
+  margin-top:100px ;
+ }
+
+ul li ul.dropdown li {
+  display: block;
+}
+
+ul li ul.dropdown {
+  width: fit-content;
+  background: #212121;
+  position: absolute;
+  z-index: 999;
+  display: none;
+  padding-left: 10px;
+}
+
+ul li:hover ul.dropdown{
+  display: block;
+}
+
+
 /* DROPDOWN MENU */
 .dropdown_menu{
   display: none;
@@ -155,10 +179,11 @@ header{
 }
 
 .angle{
- background-color: #3d3d3d;
- border-radius: 15px;
- margin-top: 3px ;
-}
+  background-color: #3d3d3d;
+  border-radius: 15px;
+  margin-top: 3px ;
+  width: 15px;
+ }
 /* RESPONSIVE DESIGN */
 @media(max-width: 992px){
   .navbar .links,
@@ -295,6 +320,7 @@ header{
  p{
   font-weight: 500;
   font-size: 20px;
+  word-spacing: 3px;
  }
 
  .head-text{
@@ -318,17 +344,17 @@ header{
    }
 
  h1{
-     font-size: 28px;
+     font-size: 30px;
      font-weight: 500;
  }
 
  h2{
-   font-size: 26px;
+   font-size: 22px;
    font-weight: 600;
  }
 
  h3{
-     font-size: 24px;
+     font-size: 21px;
      display: flex;
      text-align: center;
      margin-top: 80px;
