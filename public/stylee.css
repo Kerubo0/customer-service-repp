@@ -162,6 +162,7 @@ ul li:hover ul.dropdown{
 
 .dropdown_menu.open{
   height: 260px;
+  z-index: 9;
 }
 
 
@@ -321,6 +322,7 @@ ul li:hover ul.dropdown{
   font-weight: 500;
   font-size: 20px;
   word-spacing: 3px;
+  line-height: 1.75em;
  }
 
  .head-text{
