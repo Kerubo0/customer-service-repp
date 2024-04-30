@@ -1,9 +1,11 @@
 const express = require('express');
 const axios = require('axios');
 const path = require('path');
-const apiKey = process.env.OMNISEND_API_KEY;
+
 
 const app = express();
+
+const apiKey = process.env.OMNISEND_API_KEY;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -39,9 +41,9 @@ app.post('/submit', async (req, res) => {
             data,
             {
                 headers: {
-                    'X-API-KEY': apiKey,
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
+                    "X-API-KEY": apiKey,
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
                 }
             }
         );
@@ -58,3 +60,4 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server started on http://localhost:${PORT}`);
 });
+

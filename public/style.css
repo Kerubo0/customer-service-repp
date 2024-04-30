@@ -1,108 +1,925 @@
 *{
-    margin: 0;
-    padding: 0;
-    font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;
 }
 
-.container{
-    width: 100%;
-    height: 100vh;
-    /*background-image: linear-gradient(rgba(0,0,50,0.8)rgba(0,0,50,0.8)), url(background.png);
-    background-position: center;
-    background-size: cover;*/
+html { 
+  scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    transition: backgroud 0.3s linear;
+    color:  white;
     background-color: #212121;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+/* UTILITY CLASSES ---------------------- */
+
+.flex {
+  display: flex;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.center {
+  align-items: center;
+  justify-content: center;
+}
+
+.reversed {
+  flex-direction: row-reverse;
+  }
+
+/* MAIN STYLES ------------------ */
+
+li {
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+}
+
+a:hover{
+  color: #ffd150;
+}
+
+
+/* HEADER */
+header{
+  position: relative;
+  padding: 0 2rem;
+  background-color: #3d3d3d;
+}
+
+.navbar{
+  width: 100%;
+  height: 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .logo a{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.links{
+  background-color: #212121;
+  border-radius: 15px;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px 5px 10px;
+}
+
+
+.navbar .links{
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar .toggle_btn{
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+.action_btn{
+  color: black;
+  padding: 0.5rem 1rem;
+  border:none;
+  outline: none;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: scale .2 ease;
+  background: linear-gradient(180deg, #ffd150, rgba(255, 209, 80, 0.49) 99.99%, rgba(255, 209, 80, 0));
+  box-shadow: -7px -7px 10px rgba(255, 255, 255, 0.25), 10px 10px 12px rgba(0, 0, 0, 0.25);
+
+}
+
+.action-btn:hover{
+  scale: 1.05;
+  color: white;
+}
+
+.action-btn:active{
+  scale: 0.95;
+}
+
+/* DROPDOWN */
+
+.dropdown{
+  margin-top:100px ;
+ }
+
+ul li ul.dropdown li {
+  display: block;
+}
+
+ul li ul.dropdown {
+  background-color: #3d3d3d;
+  border: 1px solid;
+  border-color: #ffd150;
+  border-radius: 10px;
+  position: absolute;                          
+  z-index: 999;
+  display: none;
+  padding-left: 10px;
+  /*transition-delay: 500ms;*/
+}
+
+.ellipse-img{
+  width: 20px;
+  height: 20px;
+}
+
+hr{
+  color: black;
+  background-color: black;
+}
+
+
+/* DROPDOWN MENU */
+.dropdown_menu{
+  display: none;
+  position: absolute;
+  right: 2rem;
+  height: 0;
+  top: 60px;
+  width: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open{
+  height: 260px;
+  z-index: 9;
+}
+
+
+.dropdown_menu li{
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown_menu .action_btn{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#angle-one{
+  background-color: #3d3d3d;
+  border-radius: 15px;
+  margin-top: 3px ;
+  width: 15px;
+}
+
+.angle{
+  background-color: #3d3d3d;
+  border-radius: 15px;
+  margin-top: 3px ;
+  width: 15px;
+ }
+
+ .rotate180 {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease; 
+ }
+
+
+ 
+ .titled{
+  font-size: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+
+ #expand_less{
+margin-left: 30px;
+ }
+/* RESPONSIVE DESIGN */
+@media(max-width: 992px){
+  .navbar .links,
+  .navbar .action_btn {
+      display: none;
+  }
+
+  .navbar .toggle_btn{
+      display: block;
+  }
+
+  .dropdown_menu{
+      display: block;
+  }
+}
+
+@media(max-width: 576px) {
+  .dropdown_menu{
+      left: 2rem;
+      width: unset;
+  }
+}
+
+
+  /* HERO IMAGE AND ICONS */
+
+  .image-icons{
     position: relative;
-}
-
-.form-box{
-    width: 90%;
-    max-width: 450px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    background: #3d3d3d;
-    padding: 50px 60px 70px;
-    text-align: center;
-}
-
-.form-box h1 {
-    font-size: 30px;
-    margin-bottom: 60px;
-    color: #ffd150;
-    position: relative;
-}
-.form-box h1::after{
-    content: "";
-    width: 30px;
-    height: 4px;
-    border-radius: 3px;
-    background: #ffd150;
-    position: absolute;
-    bottom: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.input-field{
-    background: #eaeaea;
-    margin: 15px 0;
-    border-radius: 5px;
-    display: flex;
+    display: flex ;
     align-items: center;
-    max-height: 65px;
-    transition: max-height 0.5s;
-    overflow: hidden;
-}
-
-input{
-    width: 100%;
-    background: transparent;
-    border: 0;
-    outline: 0;
-    padding: 18px 15px;
-}
-
-.input-field i {
-    margin-left: 15px;
- color: #999;   
-}
-
-form p{
-    text-align: left;
-    font-size: 13px;
-}
-
-/*form p a{
-    text-decoration: none;
-    color: #3c00a0;
-}*/
-
-.btn-field{
-    width: 100%;
-    display: flex;
     justify-content: center;
-    align-items: center;
+    padding-top: 70px;
+    max-width: 500px;
 }
 
-.btn-field button{
-    flex-basis: 48%;
-    background: #ffd150;
-    color: #111;
-    height: 40px;
-    border-radius: 20px;
-    border: 0;
-    outline: 0;
-    cursor: pointer;
-    transition: background 1s;
+.kelly-w-icons{
+  width: 400px;
+  height: auto;
 }
 
-.input-group{
-    height: 280px;
+#main {
+    position: relative;
+    /*transform: translate(-50%, -50%);*/
+    width: 300px;
+    height: 300px;
 }
 
-/*.btn-field button.disable{
-    background:#aeaeae ;
-    color: #555 ;
+.ellipse-div,
+.frame-child1,
+.frame-child2,
+.frame-child3,
+.frame-child4 {
+  position: absolute;
+  border-radius: 50%;
+  background-color: #212121;
+  border: 1px solid #ffd150;
+  box-sizing: border-box;
+  width: 87px;
+  height: 72px;
+}
+.ellipse-div {
+  top: 40%;
+  left: -5%  ;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.frame-child1,
+.frame-child2,
+.frame-child3,
+.frame-child4 {
+  top: 5%;
+  left: 35%;
+}
+.frame-child2,
+.frame-child3,
+.frame-child4 {
+  top: 42%;
+  left: 75%;
+  width: 85px;
+  height: 70px;
+}
+
+.frame-child3{
+   top: 70%;
+   left: 75%;
+   width: 90px;
+   height: 70px;
+}
+
+.frame-child4 {
+  top: 70%;
+  left: -5%;
+  width: 90px;
+  height: 71px;
+}
+
+#gmail {
+  position: absolute;
+  top: 6%;
+  left: 38%;
+  width: 75px;
+  height: 60px;
+  
+}
+#blu-w-lines {
+  position: absolute;
+  top: 44%;
+  left: 80%;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+#zee {
+  position: absolute;
+  top: 72%;
+  left: 5%;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+#telephone {
+  position: absolute;
+  top: 70%;
+  left: 80%;
+  width: 60px;
+  height: 60px;
+  z-index: 5;
+}
+#sms {
+  position: absolute;
+  top: 45%;
+  left: -3%;
+  width: 70px;
+  height: 45px;
+  object-fit: cover;
+}
+
+ /*  HERO */
+   
+ p{
+  font-weight: 500;
+  font-size: 20px;
+  word-spacing: 3px;
+  line-height: 1.75em;
+ }
+
+ .head-text{
+  text-align: center;
+     margin: 10px auto;
+     max-width: 600px;
+ }
+
+ .hero-text {
+     text-align: center;
+     margin: 10px auto;
+     max-width: 60%;
+     /*max-width: 32ch;*/
+     max-width: 1000px;
+   }
+
+   @media (max-width: 1200px){
+     .hero-text{
+       max-width: 70%;
+     }
+   }
+
+ h1{
+     font-size: 30px;
+     font-weight: 500;
+ }
+
+ h2{
+   font-size: 22px;
+   font-weight: 600;
+ }
+
+ h3{
+     font-size: 21px;
+     display: flex;
+     text-align: center;
+     margin-top: 80px;
+     margin-bottom: 40px;
+ }
+
+ button{
+  font-size: 20px;
+  font-weight: 500;
+ }
+
+ .btn {
+     padding: 10px 20px;
+     width: 200px;
+     width: 20vw;
+     min-width: 200px;
+     margin: 20px;
+     border-radius: 12px;
+     font-weight: bold;
+     border: none;
+   }
+ 
+   .btn:hover {
+     cursor: pointer;
+   }
+ 
+   .primary {
+    /* background-image: linear-gradient(to bottom, #FFD150, #d49e08);*/
+    background: linear-gradient(180deg, #ffd150, rgba(255, 209, 80, 0.49) 99.99%, rgba(255, 209, 80, 0));
+  box-shadow: -7px -7px 10px rgba(255, 255, 255, 0.25), 10px 10px 12px rgba(0, 0, 0, 0.25);
+   }
+   
+ .secondary {
+    /* background-image: linear-gradient(to bottom, #777676, #3d3745);*/
+    background-color: #3d3d3d;
+    /*box-shadow: -7px -7px 10px rgba(255, 255, 255, 0.25), 10px 10px 12px rgba(0, 0, 0, 0.25);*/
+     color: whitesmoke;
+ }
+
+ .hero-image{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .block-text{
+     margin: 20px;
+     max-width: 45%;
+ }
+
+ /* Ensures that the parent container is a flex container */
+.content-three {
+display: flex;
+justify-content: space-between; /* This will space out the children evenly */
+align-items: center; /* This aligns the children vertically in the center */
+flex-direction: row-reverse; /* Reverses the order of flex items (because of the "reversed" class) */
+padding: 20px; /* Adds some padding around the content */
+}
+
+/* Styling for the text block */
+.block-text {
+flex: 1; /* Allows the text block to grow and take up equal space */
+padding: 0 20px; /* Adds some padding for spacing */
+}
+
+/* Styling for the image container */
+.content-img-three {
+flex: 1; /* Allows the image container to grow and take up equal space */
+display: flex;
+justify-content: center; /* Centers the image horizontally */
+align-items: center; /* Centers the image vertically */
+padding: 0 20px; /* Adds some padding for spacing */
+}
+
+/* Additional styling for the image to ensure it's responsive and doesn't overflow its container */
+.image-seven {
+max-width: 100%;
+height: auto;
+}
+
+.hero-block-one{
+display: flex;
+justify-content: space-between; 
+align-items: center; 
+padding: 20px;
+}
+
+.hero-block-img-one{
+flex: 1 ; 
+display: flex;
+justify-content: center;
+align-items: center; 
+padding: 0 20px; 
+}
+
+@media (max-width: 450px){
+  .hero-image-one{
+    width: 340px;
+  }
+}
+
+.image-two{
+  position: relative;
+  bottom: 40%;
+
+}
+
+@media(max-width: 500px){
+  .image-two{
+    width: 320px;
+  }
+}
+
+.hero-block-two{
+display: flex;
+justify-content: space-between; 
+align-items: center; 
+flex-direction: row-reverse; 
+padding: 20px; 
+}
+
+.hero-block-img-two{
+flex: 1; 
+display: flex;
+justify-content: center; 
+align-items: center; 
+padding: 0 20px; 
+}
+
+.image-three{
+max-width: 100%;
+height: auto
+}
+
+.hero-block-three{
+display: flex;
+justify-content: space-between; 
+align-items: center; 
+padding: 20px;
+}
+
+.hero-block-img-three{
+flex: 1; 
+display: flex;
+justify-content: center;
+align-items: center; 
+padding: 0 20px; 
+}
+
+.image-four{
+max-width: 100%;
+height: auto;
+}
+
+.content-one{
+display: flex;
+justify-content: space-between; 
+align-items: center; 
+flex-direction: row-reverse; 
+padding: 20px; 
+}
+
+.content-image-one{
+flex: 1; 
+display: flex;
+justify-content: center; 
+align-items: center; 
+padding: 0 20px; 
+}
+
+.icon2{
+  position: relative;
+  top: 2%;
+  right: 10%;
+}
+
+.image-five{
+max-width: 100%;
+height: auto
+}
+
+
+.content-two{
+display: flex;
+justify-content: space-between; 
+align-items: center; 
+padding: 20px;
+}
+
+.content-img-two{
+flex: 1; 
+display: flex;
+justify-content: center;
+align-items: center; 
+padding: 0 20px; 
+}
+
+.image-six{
+max-width: 100%;
+height: auto;
+}
+ 
+ .image-w-icons{
+     width: 350px;
+     height: 350px;
+ }
+
+.card-container {
+ padding-top: 250px;
+ margin-top: 30px;
+ margin-bottom: 80px;
+ color: whitesmoke;
+}
+
+.card-holder {
+ position: relative;
+ background-color: #4d4949;
+ max-width: 800px;
+ z-index: 0;
+ padding: 30px 36px 20px 36px;
+ border-radius: 16px;
+}
+
+.card-container .image-icons {
+ z-index: 10;
+ position: absolute;
+ top: -250px;
+}
+
+.kelly {
+ text-align: center;
+ margin-top: 140px;
+}
+
+.descriptor {
+ max-width: 36ch;
+ text-align: center;
+ margin-bottom: 60px;
+ font-size: 20px;
+}
+
+.final-sale {
+ background-color: rgba(255, 209, 80, 0.9);
+ box-shadow: 0px 39px 56px -36px rgba(255, 255, 255, 0.5) inset, 0px 7px 11px -4px #fffafa inset, 0px -82px 68px -64px rgba(96, 68, 144, 0.3) inset, 0px 98px 100px -48px rgba(202, 172, 255, 0.3) inset, 0px 98px 100px -48px rgba(202, 172, 255, 0.3) inset, 0px 4px 18px rgba(154, 146, 210, 0.3) inset;
+ backdrop-filter: blur(100px);
+ color: #111;
+ border-top-left-radius: 20px;
+ border-top-right-radius: 20px;
+}
+
+.save-text {
+ padding: 40px;
+ color: #111;
+ text-align: center;
+ max-width: 56ch;
+}
+
+.btn-container {
+ justify-content: space-between;
+ align-items: center;
+ padding-bottom: 20px;
+}
+
+/*.final-btns {
+width: 100%;
+
 }*/
+
+/*@media (max-width: 768px){
+.final-btns{
+ display: block;
+}
+
+}*/
+
+.rounded-btn-holder {
+ margin-right: 20px ; 
+}
+
+.secondary.rounded {
+ width: 40px;
+ height: 40px;
+ border-radius: 50%;
+ margin: 0 30px;
+ font-size: 20px;
+ color: whitesmoke;
+ border: none;
+ cursor: pointer;
+}
+
+@media screen and(max-width: 500px) {
+.btn .secondary{
+ width: 200px;
+}
+.btn-container{
+width: 100%;
+}
+}
+
+.btn_container_p{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20px;
+}
+
+
+footer {
+ background-color: #3d3d3d;
+ color: whitesmoke;
+ padding: 40px;
+}
+
+/* Footer styles */
+.footer-wrapper {
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-between;
+}
+
+.sign-off {
+ gap: 20px;
+}
+
+.socials {
+ gap: 20px;
+ color: whitesmoke;
+}
+
+.footer-wrapper > div {
+ flex: 1 1 200px; 
+ margin-right: 20px; 
+}
+
+.footer-wrapper div p a { 
+ color: whitesmoke;
+ text-decoration: none;
+ font-size: 14px;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+ .footer-wrapper > div {
+   flex-basis: calc(50% - 40px);
+   gap: 40px; 
+ }
+}
+
+@media screen and (max-width: 480px) {
+ .footer-wrapper > div {
+   flex-basis: 100%; 
+ }
+}
+
+.hero-block-one > * {
+ flex: 1 1 80%; 
+ max-width: 55%;
+ }
+
+.hero-block-two > * {
+ flex: 1 1 75%; 
+ max-width: 45%;
+ }
+
+.hero-block-three > * {
+ flex: 1 1 75%; 
+ max-width: 45%;
+ }
+
+ .targetee{
+   height: auto;
+ }
+
+ @media (max-width: 500px){
+  .targetee{
+    width: 320px;
+  }
+ }
+
+.content-one > * {
+ flex: 1 1 75%; 
+ max-width: 45%;
+ }
+
+ @media (max-width: 500px){
+  .icon2{
+    position: relative;
+    top: 10%;
+    right: 40%;
+    width: 320px;
+  }
+ }
+.content-two > * {
+ flex: 1 1 75%; 
+ max-width: 45%;
+ }  
+.content-three > * {
+ flex: 1 1 75%; 
+ max-width: 45%;
+ }      
+/* Styling for responsiveness*/
+/*@media (max-width:900px){
+.block-text{
+max-width: 100%;
+}
+}*/
+
+@media (max-width: 768px){
+ .hero-text {
+   max-width: 85%;
+    }
+    .image-one{
+     width: 400px;
+     height: 400px;
+    }
+
+    .content-three{
+     display: flex;
+     justify-content: center;
+     align-items: center; /* This aligns the children vertically in the center */
+     flex-direction: row-reverse; /* Reverses the order of flex items (because of the "reversed" class) */
+     flex-wrap: wrap;
+     padding: 20px; /* Adds some padding around the content */
+    }
+
+    .content-two{
+     display: flex;
+     justify-content: center;
+     align-items: center; /* This aligns the children vertically in the center */
+     flex-wrap: wrap;
+     padding: 20px; /* Adds some padding around the content */
+    }
+
+    .content-one{
+     display: flex;
+     justify-content: center;
+     align-items: center; /* This aligns the children vertically in the center */
+     flex-direction: row-reverse; /* Reverses the order of flex items (because of the "reversed" class) */
+     flex-wrap: wrap;
+     padding: 20px; /* Adds some padding around the content */
+    }
+
+    .hero-block-three{
+     display: flex;
+     justify-content: center;
+     align-items: center; /* This aligns the children vertically in the center */
+     flex-wrap: wrap;
+     padding: 20px; /* Adds some padding around the content */
+    }
+  
+    .hero-block-two{
+     display: flex;
+     justify-content: center;
+     align-items: center; /* This aligns the children vertically in the center */
+     flex-direction: row-reverse; /* Reverses the order of flex items (because of the "reversed" class) */
+     flex-wrap: wrap;
+     padding: 20px; /* Adds some padding around the content */
+    }
+
+    
+    .hero-block-one{
+     display: flex;
+     justify-content: center;
+     align-items: center; /* This aligns the children vertically in the center */
+     flex-wrap: wrap;
+     padding: 20px; /* Adds some padding around the content */
+    }
+
+    .image-one{
+     width: 250px;
+     height: 250px;
+    }
+
+
+   
+.hero-block-one > * {
+ flex: 1 1 80%; 
+ max-width: 85%;
+ }
+
+.hero-block-two > * {
+ flex: 1 1 75%; 
+ max-width: 85%;
+ }
+
+.hero-block-three > * {
+ flex: 1 1 75%; 
+ max-width: 85%;
+ }
+
+.content-one > * {
+ flex: 1 1 75%; 
+ max-width: 85%;
+ }
+.content-two > * {
+ flex: 1 1 75%; 
+ max-width: 85%;
+ } 
+ .content-three > *{
+   flex: 1 1 75%;
+   max-width: 85%;
+ }
+ .block-text{
+   padding: 0px;
+ }
+ h2{
+   font-size: 26px;
+   font-weight: 600;
+ }
+
+ p{
+   font-weight: 500;
+   font-size: 24px;
+  }
+
+}
+
+@media( max-width: 500px){
+  h2{
+    font-size: 22px;
+  }
+  p{
+    font-size: 20px;
+  }
+}
+
