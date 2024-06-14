@@ -2,6 +2,7 @@ document.getElementById('contactForm').addEventListener('submit', async (event) 
     event.preventDefault();
 
     const name = document.getElementById('name').value;
+    //const phone = document.getElementById('phone').value;
     const email = document.getElementById('email').value;
 
     try {
@@ -12,4 +13,7 @@ document.getElementById('contactForm').addEventListener('submit', async (event) 
         console.error('Error submitting form:', error);
         alert('Error submitting form');
     }
-});
+}); 
+
+
+

@@ -71,7 +71,9 @@ backToTopBtn.addEventListener("click", () => {
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }); */
 
-const actionBtn = document.getElementById("action_btn");
+// THE BUTTONS
+
+/*const actionBtn = document.getElementById("action_btn");
 
 actionBtn.addEventListener("click", ()=> {
  window.location.href = "http://localhost:3000/join"
@@ -99,7 +101,7 @@ const btnThree = document.getElementById("btn-3");
 
 btnThree.addEventListener("click", ()=> {
  window.location.href = "http://localhost:3000/join"
-})
+}) */
 
 
 /* const angleOne = document.getElementById("angle-one")
@@ -152,3 +154,20 @@ const angleElem = document.getElementById("expand_less")
     // Show the expand more image
     //angleImages.style.display = "block";
 }); */
+
+
+document.querySelectorAll(".btn").forEach(button => {
+  button.addEventListener("click", function() {
+    fetch("form.html")
+      .then(response => response.text())
+      .then(data => {
+        document.querySelector("#form-container").innerHTML = data;
+        document.querySelector(".form-box").classList.add("active");
+
+        document.querySelector(".form-btn .close-btn").addEventListener("click", function() {
+          document.querySelector(".form-box").classList.remove("active");
+        });
+      });
+  });
+}); 
+
