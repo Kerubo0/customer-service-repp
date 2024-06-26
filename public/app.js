@@ -156,7 +156,7 @@ const angleElem = document.getElementById("expand_less")
 }); */
 
 
-document.querySelectorAll(".btn").forEach(button => {
+/* document.querySelectorAll(".btn").forEach(button => {
   button.addEventListener("click", function() {
     fetch("form.html")
       .then(response => response.text())
@@ -169,5 +169,16 @@ document.querySelectorAll(".btn").forEach(button => {
         });
       });
   });
-}); 
+}); */
+
+const buttons = document.querySelectorAll(".btn").forEach(button => {
+  button.addEventListener('click', () => {
+    document.getElementById('formContainer').style.display = 'flex';
+  });
+ });
+
+ document.querySelector(".form-container .close-btn").addEventListener("click", function() {
+  document.getElementById('formContainer').style.display ='none';
+ });
+
 

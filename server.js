@@ -41,7 +41,7 @@ app.post('/submit-form', async (req, res) => {
             }],
             //firstName: name,
             'customProperties': {
-                'landingpage': 'kelly'
+                'landingpage': 'andy'
               }
             
         };
