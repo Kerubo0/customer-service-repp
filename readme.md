@@ -1,4 +1,4 @@
-This is the Kelly.The Customer Service Representatitive landing page.
+This is the Kelly.The Customer Service Representative landing page.
 On Line 382 of index.html is where the form code starts.
 The styling for the form is on line 1266 of style.css
 The js is on app.js starting from line 174.
